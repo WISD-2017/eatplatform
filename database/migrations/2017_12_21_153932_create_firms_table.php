@@ -15,6 +15,9 @@ class CreateFirmsTable extends Migration
     {
         Schema::create('firms', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('firm');
+            $table->string('address');
+            $table->string('tel');
             $table->timestamps();
         });
     }

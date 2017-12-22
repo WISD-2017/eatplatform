@@ -15,6 +15,12 @@ class CreateStoresTable extends Migration
     {
         Schema::create('stores', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('store');
+            $table->string('address');
+            $table->string('type');
+            $table->float('avg_score');
+            $table->text('introduction');
+            $table->boolean('is_report');
             $table->timestamps();
         });
     }
