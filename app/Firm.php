@@ -15,4 +15,8 @@ class Firm extends Model
     public function stores(){
         return $this->hasMany(Store::class);
     }
+
+    public function user(){
+        return $this->morphMany('App\User','userable');
+    }
 }
