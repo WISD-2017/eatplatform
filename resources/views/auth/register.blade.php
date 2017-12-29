@@ -62,6 +62,18 @@
                         </div>
 
                         <div class="form-group">
+                            <label for="gender" class="col-md-4 control-label">性別</label>
+
+                            <div class="col-md-6">
+                                <select id="gender" name="gender" class="form-control" required>
+                                    <option value="-1">請選擇</option>
+                                    <option value="0">男</option>
+                                    <option value="1">女</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
                                 <button type="submit" class="btn btn-primary">
                                     Register
