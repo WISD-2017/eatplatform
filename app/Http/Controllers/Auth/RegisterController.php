@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Member;
+use App\Firm;
 use App\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
@@ -48,12 +49,31 @@ class RegisterController extends Controller
      */
     protected function validator(array $data)
     {
-        return Validator::make($data, [
+        $array=[
+            'submit'=>'required',
+        ];
+        Validator::make($data,$array);
+
+        if($data['submit']!='會員註冊'){
+            $array=[
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:6|confirmed',
-            'gender' => 'required',
-        ]);
+            'firm'=>'required',
+            'address'=>'required',
+            'tel'=>'required',
+        ];
+
+        }else{
+            $array=[
+                    'name' => 'required|string|max:255',
+                    'email' => 'required|string|email|max:255|unique:users',
+                    'password' => 'required|string|min:6|confirmed',
+                    'gender'=>'required',
+                ];
+        }
+
+        return Validator::make($data,$array);
     }
 
     /**
@@ -64,23 +84,30 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        Member::create([
-            'gender'=>$data['gender'],
-        ]);
-
-        $member=Member::orderByDesc('created_at')->first();
-
-        /*$user = User::create([
-            'name'=>$data['name'],
-        'email'=>$data['email'],
-        'password' => bcrypt($data['password']),
-        ]);*/
         $user=new User();
         $user->name=$data['name'];
         $user->email=$data['email'];
         $user->password = bcrypt($data['password']);
 
-        $member->user()->save($user);
+        if($data['submit']!='會員註冊'){
+            Firm::create([
+                'firm'=>$data['firm'],
+                'address'=>$data['address'],
+                'tel'=>$data['tel'],
+            ]);
+
+            $userable=Firm::orderByDesc('created_at')->first();
+
+        }else{
+            Member::create([
+                'gender'=>$data['gender'],
+            ]);
+
+            $userable=Member::orderByDesc('created_at')->first();
+        }
+
+        $userable->user()->save($user);
+
         return $user;
     }
 }
