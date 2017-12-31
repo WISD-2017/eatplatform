@@ -5,7 +5,7 @@
     <div class="row">
         <div class="col-md-6">
             <div class="panel panel-default">
-                <div class="panel-heading">會員註冊</div>
+                <div class="panel-heading text-center">一般會員</div>
 
                 <div class="panel-body">
                     <form class="form-horizontal" method="POST" action="{{ route('register') }}">
@@ -65,10 +65,10 @@
                             <label for="gender" class="col-md-4 control-label">性別</label>
 
                             <div class="btn-group col-md-6 btn-group-toggle" data-toggle="buttons" >
-                                <label class="btn btn-default col-lg-6 active">
+                                <label class="btn btn-default col-md-6 active">
                                     <input type="radio" name="gender" id="gender1" value="1" autocomplete="off" checked="checked" required>男
                                 </label>
-                                <label class="btn btn-default col-lg-6">
+                                <label class="btn btn-default col-md-6">
                                     <input type="radio" name="gender" id="gender0" value="0" autocomplete="off"> 女
                                 </label>
                             </div>                                    
@@ -76,9 +76,7 @@
 
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
-                                <button type="submit" class="btn btn-primary">
-                                    Register
-                                </button>
+                                <input id="Submit"  name="submit" type="submit" value="會員註冊" class="btn btn-primary radio radio-inline form-control" required/>
                             </div>
                         </div>
                     </form>
@@ -87,25 +85,25 @@
         </div>
         <div class="col-md-6">
             <div class="panel panel-default">
-                <div class="panel-heading">商家註冊</div>
+                <div class="panel-heading text-center">商家或公司行號</div>
 
                 <div class="panel-body">
                     <form class="form-horizontal" method="POST" action="{{ route('register') }}">
                         {{ csrf_field() }}
 
                         <div class="form-group">
-                            <label for="name" class="col-md-4 control-label">商家名稱</label>
+                            <label for="firm" class="col-md-4 control-label">商家名稱</label>
 
                             <div class="col-md-6">
-                                <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" required autofocus>
+                                <input id="firm" type="text" class="form-control" name="firm" value="{{ old('name') }}" required autofocus>
                             </div>
                         </div>
 
                         <div class="form-group">
-                            <label for="name" class="col-md-4 control-label">商家地址</label>
+                            <label for="address" class="col-md-4 control-label">商家地址</label>
 
                             <div class="col-md-6">
-                                <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" required autofocus>
+                                <input id="address" type="text" class="form-control" name="address" value="{{ old('address') }}" required autofocus>
                             </div>
                         </div>
 
@@ -138,10 +136,10 @@
                         </div>
 
                         <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
-                            <label for="name" class="col-md-4 control-label">聯絡電話</label>
+                            <label for="tel" class="col-md-4 control-label">聯絡電話</label>
 
                             <div class="col-md-6">
-                                <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" required autofocus>
+                                <input id="tel" type="text" class="form-control" name="tel" value="{{ old('name') }}" required autofocus>
                             </div>
                         </div>
 
@@ -169,9 +167,7 @@
 
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
-                                <button type="submit" class="btn btn-primary">
-                                    Register
-                                </button>
+                                <input id="Submit"  name="submit" type="submit" value="商家註冊" class="btn btn-primary radio radio-inline form-control" required/>
                             </div>
                         </div>
                     </form>
