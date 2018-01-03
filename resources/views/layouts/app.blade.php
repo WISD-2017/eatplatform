@@ -28,9 +28,10 @@
                     </button>
 
                     <!-- Branding Image -->
-                    <a class="navbar-brand" href="{{ url('/') }}">
-                        {{ config('app.name', 'Laravel') }}
+                    <a href="{{ url('/') }}">
+                        <img src="{{asset("../img/emblemmatic-eat-platform-logo-0.png")}}" width="40%" height="40%">
                     </a>
+
                 </div>
 
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
