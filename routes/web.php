@@ -20,3 +20,7 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/stores', 'StoresController@index')->name('stores.index');
+
+Route::get('/index', function () {
+    return view('rating');
+});
