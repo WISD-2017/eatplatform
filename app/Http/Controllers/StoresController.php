@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Comment;
 use App\Firm;
+use App\Member;
+use App\User;
 use Illuminate\Http\Request;
 use App\Store;
 
@@ -48,8 +51,11 @@ class StoresController extends Controller
      */
     public function show($id)
     {
-        //
+        $store=Store::find($id);
+        $comments=Comment::where('store_id',$store->id)->get();
+        return view('stores.show',['store'=>$store,'comments'=>$comments]);
     }
+
 
     /**
      * Show the form for editing the specified resource.

@@ -44,7 +44,7 @@
                                         @endif
                                     </div>
                                     <div class="col-md-4">
-                                        <a href="{{ route('home') }}" class="pull-right">繼續閱讀...</a>
+                                        <a href="{{route('stores.show',$stores->id)}}" class="pull-right">繼續閱讀...</a>
                                     </div>
                                 </div>
                             </div>
