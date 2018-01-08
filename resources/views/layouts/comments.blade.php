@@ -55,10 +55,6 @@
                 </li>
 
                 <li>
-                    <a href="#">哈囉~{{ Auth::user()->name }}</a>
-                </li>
-
-                <li>
                     <a href="{{ route('logout') }}"
                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">登出</a>
