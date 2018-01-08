@@ -42,7 +42,7 @@ Route::group(['middleware'=>'auth'],function(){
     //刪評價
 
     Route::get('/comments/{comment_id}/edit', 'CommentsController@edit')->name('comments.edit');
-    Route::patch('/comments/{comment_id}', 'CommentsController@update')->name('comments.update');
+    Route::patch('/comments/{comment_id}/update', 'CommentsController@update')->name('comments.update');
     //修改評價
 
 
