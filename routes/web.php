@@ -31,6 +31,9 @@ Route::group(['middleware'=>'auth'],function(){
     Route::get('/comments', 'CommentsController@index')->name('comments.index');
     //瀏覽自己評價
 
+    Route::get('/comments/all', 'CommentsController@all')->name('comments.all');
+    //瀏覽所有評價
+
     Route::get('/comments/{comment_id}', 'CommentsController@destroy')->name('comments.destroy');
     //刪評價
 

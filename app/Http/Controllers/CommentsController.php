@@ -17,4 +17,12 @@ class CommentsController extends Controller
 
         return view('comments.index',['comments'=>$comments]);
     }
+
+    public function all()
+    {
+        $comments=Comment::join('stores','comments.store_id','=','stores.id')
+            ->get();
+        return view('comments.all',['comments'=>$comments]);
+    }
+
 }

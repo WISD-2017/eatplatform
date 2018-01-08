@@ -45,10 +45,10 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
                 <li>
-                    <a href="#">所有評價</a>
+                    <a href="/comments/all">所有評價</a>
                 </li>
                 <li>
-                    <a href="#">我的評價</a>
+                    <a href="/comments">我的評價</a>
                 </li>
                 <li>
                     <a href="#">聯絡我們</a>
