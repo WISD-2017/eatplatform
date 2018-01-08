@@ -32,4 +32,8 @@ class CommentsController extends Controller
         return redirect()->route('comments.index');
     }
 
+    public function create()
+    {
+        return view('comments.create');
+    }
 }
