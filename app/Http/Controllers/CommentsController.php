@@ -36,4 +36,14 @@ class CommentsController extends Controller
     {
         return view('comments.create');
     }
+
+    public function store(Request $request)
+    {
+        $comments=new Comment($request->only('content','score','created_at','updated_at'));
+        $comments->member_id=Auth::user()->id;
+        $comments->store_id=$request->store_id;
+        $comments->save();
+        return redirect()->route('comments.index');
+    }
+
 }
