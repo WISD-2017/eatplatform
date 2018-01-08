@@ -27,7 +27,7 @@
                 <h4>我給{{ $comments->score }}分</h4>
                 <p>{{ $comments->content }}</p>
                 <a class="btn btn-danger" href="/comments/{{ $comments->id}}">刪除評價 <span class="glyphicon"></span></a>
-                <a class="btn btn-primary" href="#">編輯評價 <span class="glyphicon"></span></a>
+                <a class="btn btn-primary" href="/comments/{{ $comments->id}}/edit">編輯評價 <span class="glyphicon"></span></a>
             </div>
         </div>
         <!-- /.row -->

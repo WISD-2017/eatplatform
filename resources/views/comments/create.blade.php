@@ -4,7 +4,7 @@
 
 <div class="container">
     <div class="row">
-        <h4 align="center">評論一下這家店吧</h4>
+        <h4 align="center">評價一下這家店吧</h4>
         <div class="col col-md-2"></div>
         <div class="col col-md-8">
 
@@ -13,7 +13,7 @@
 
 
                 <div class="form-group required">
-                    <label for="exampleSelect1" class='control-label'>給個評分吧</label>
+                    <label for="exampleSelect1" class='control-label'>給個評分</label>
                     <select class="form-control" id="exampleSelect1" name="score">
                         <option>5</option>
                         <option>4</option>
