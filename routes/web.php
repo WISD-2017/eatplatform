@@ -45,3 +45,15 @@ Route::group(['middleware'=>'auth'],function(){
     Route::post('/comments', 'CommentsController@store')->name('comments.store');
     //新增評價
 });
+Route::group(['prefix' => 'admins'], function() {
+    
+	Route::get('/', function () {
+    return view('admin.index');
+});
+
+	//瀏覽檢舉店家
+    Route::get('/store', 'AdminStoreController@index')->name('admin.stores');
+    //瀏覽檢舉評價
+      Route::get('/comment', 'AdminCommentController@index')->name('admin.comments');
+
+	  });
