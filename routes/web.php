@@ -27,6 +27,10 @@ Route::group(['prefix' => 'stores'], function () {
     Route::post('/', 'StoresController@store')->name('stores.store');
     /*瀏覽店家介紹*/
     Route::get('{store_id}', 'StoresController@show')->name('stores.show');
+    /*修改店家介紹*/
+    Route::get('{store_id}/edit', 'StoresController@edit')->name('stores.edit');
+    Route::patch('{store_id}', 'StoresController@update')->name('stores.update');
+
 });
 
 Route::group(['middleware' => 'auth'], function () {
