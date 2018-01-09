@@ -13,9 +13,14 @@
         </div>
     </div>
     <!-- /.row -->
+    
+
+    @foreach ($comments as $comments)
+    <form action="/comments/report/{{ $comments->id }}" method="POST" role="form">
+    {{csrf_field()}}
+    {{method_field('PATCH')}}
 
     <!-- Project One -->
-    @foreach ($comments as $comments)
         <div class="row">
             <div class="col-md-7">
                 <a href="#">
@@ -26,8 +31,8 @@
                 <h3 style="font-weight:bold;">{{ $comments->store }}</h3>
                 <h4>給{{ $comments->score }}分</h4>
                 <p style="line-height:90px;" border="1">{{ $comments->content }}</p>
-                <a class="btn btn-danger" href="#">檢舉 <span class="glyphicon"></span></a>
-                
+                <button type="submit" class="btn btn-danger" >檢舉</button>
+
 
                 <p>於{{ $comments->created_at }}評價 | 於{{ $comments->updated_at }}編輯過</p>
             </div>
@@ -35,6 +40,7 @@
         <!-- /.row -->
         <hr>
 @endforeach
+    </form>
 
 
 

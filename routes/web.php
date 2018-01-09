@@ -48,6 +48,8 @@ Route::group(['middleware'=>'auth'],function(){
     Route::patch('/comments/{comment_id}/update', 'CommentsController@update')->name('comments.update');
     //修改評價
 
+    Route::patch('/comments/report/{comments_id}','CommentsController@report')->name('comments.report');
+
 
 
 });

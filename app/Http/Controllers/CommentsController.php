@@ -71,4 +71,12 @@ class CommentsController extends Controller
         return view('comments.contact');
     }
 
+    public function report($id)
+    {
+        $comments=Comment::find($id);
+        $comments->update(['is_report'=>1]);
+        return redirect()->route('comments.all');
+
+    }
+
 }
