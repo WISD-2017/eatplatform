@@ -1,14 +1,14 @@
 @extends('layouts.comments')
 
 
-
+@foreach ($stores as $stores)
 <div class="container">
     <div class="row">
-        <h4 align="center">評價一下這家店吧</h4>
+        <h4 align="center">評價一下"{{ $stores->store }}"吧</h4>
         <div class="col col-md-2"></div>
         <div class="col col-md-8">
 
-            <form action="/comments" method="POST" role="form">
+            <form action="/comments/{{$id}}" method="POST" role="form">
                 {{csrf_field()}}
 
 
@@ -32,14 +32,6 @@
 
                 <hr size="1">
 
-                <div class="form-group required">
-                    <label for="exampleInputEmail1" class='control-label'>商家編號</label>
-                    <input name="store_id" class="form-control" id="exampleInputTextarea" placeholder="輸入編號"></input>
-                </div>
-
-
-
-                <hr size="1">
                 <div class="form-group">
                     <label for="exampleInputFile">照片上傳</label>
                     <input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp">
@@ -58,3 +50,4 @@
 
     </div>
 </div>
+@endforeach

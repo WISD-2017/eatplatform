@@ -35,14 +35,6 @@
 
                 <hr size="1">
 
-                <div class="form-group required">
-                    <label for="exampleInputEmail1" class='control-label'>商家編號</label>
-                    <textarea name="store_id" class="form-control" id="exampleInputTextarea" placeholder="輸入編號">{{ $comments->store_id }}</textarea>
-                </div>
-
-
-
-                <hr size="1">
                 <div class="form-group">
                     <label for="exampleInputFile">照片上傳</label>
                     <input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp">

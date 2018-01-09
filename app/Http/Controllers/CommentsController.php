@@ -33,16 +33,19 @@ class CommentsController extends Controller
         return redirect()->route('comments.index');
     }
 
-    public function create()
+    public function create($id)
     {
-        return view('comments.create');
+        $stores=Store::select('stores.store')
+            ->where('id',$id)
+            ->get();
+        return view('comments.create',['stores'=>$stores,'id'=>$id]);
     }
 
-    public function store(Request $request)
+    public function store(Request $request,$id)
     {
         $comments=new Comment($request->only('content','score','created_at'));
         $comments->member_id=Auth::user()->id;
-        $comments->store_id=$request->store_id;
+        $comments->store_id=$id;
         $comments->save();
         return redirect()->route('comments.index');
     }
