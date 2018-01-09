@@ -17,7 +17,7 @@ class CreateCommentsTable extends Migration
             $table->increments('id');
             $table->text('content');
             $table->integer('score');
-            $table->boolean('is_report');
+            $table->boolean('is_report')->default(0);
             $table->timestamps();
         });
     }

@@ -34,16 +34,18 @@ Route::group(['middleware'=>'auth'],function(){
     Route::get('/comments/all', 'CommentsController@all')->name('comments.all');
     //瀏覽所有評價
 
+    Route::get('/comments/create', 'CommentsController@create')->name('comments.create');
+    Route::post('/comments', 'CommentsController@store')->name('comments.store');
+    //新增評價
+
     Route::get('/comments/{comment_id}', 'CommentsController@destroy')->name('comments.destroy');
     //刪評價
 
     Route::get('/comments/{comment_id}/edit', 'CommentsController@edit')->name('comments.edit');
-    Route::patch('/comments/{comment_id}', 'CommentsController@update')->name('comments.update');
+    Route::patch('/comments/{comment_id}/update', 'CommentsController@update')->name('comments.update');
     //修改評價
 
-    Route::get('/comments/create', 'CommentsController@create')->name('comments.create');
-    Route::post('/comments', 'CommentsController@store')->name('comments.store');
-    //新增評價
+
 });
 Route::group(['prefix' => 'admins'], function() {
     

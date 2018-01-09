@@ -24,7 +24,7 @@
             </div>
             <div class="col-md-5">
                 <h3>{{ $comments->store }}</h3>
-                <h4>{{ $comments->score }}</h4>
+                <h4>給{{ $comments->score }}分</h4>
                 <p>{{ $comments->content }}</p>
                 <a class="btn btn-danger" href="#">檢舉<span class="glyphicon"></span></a>
             </div>
