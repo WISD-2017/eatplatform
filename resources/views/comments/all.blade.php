@@ -26,7 +26,8 @@
                 <h3 style="font-weight:bold;">{{ $comments->store }}</h3>
                 <h4>給{{ $comments->score }}分</h4>
                 <p style="line-height:90px;" border="1">{{ $comments->content }}</p>
-                <a class="btn btn-danger" href="#">檢舉<span class="glyphicon"></span></a>
+                <a class="btn btn-danger" href="#">檢舉 <span class="glyphicon"></span></a>
+
                 <p>於{{ $comments->created_at }}評價 | 於{{ $comments->updated_at }}編輯過</p>
             </div>
         </div>
