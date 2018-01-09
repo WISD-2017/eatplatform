@@ -29,7 +29,7 @@ class StoresController extends Controller
      */
     public function create()
     {
-        //
+        return view('stores.create');
     }
 
     /**
@@ -40,7 +40,8 @@ class StoresController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Store::create($request->all());
+        return redirect()->route('stores.index');
     }
 
     /**

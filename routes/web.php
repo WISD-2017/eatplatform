@@ -22,11 +22,11 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::group(['prefix' => 'stores'], function () {
     /*瀏覽所有店家*/
     Route::get('/', 'StoresController@index')->name('stores.index');
-    /*瀏覽店家介紹*/
-    Route::get('{store_id}', 'StoresController@show')->name('stores.show');
     /*新增店家介紹*/
     Route::get('create', 'StoresController@create')->name('stores.create');
     Route::post('/', 'StoresController@store')->name('stores.store');
+    /*瀏覽店家介紹*/
+    Route::get('{store_id}', 'StoresController@show')->name('stores.show');
 });
 
 Route::group(['middleware' => 'auth'], function () {
