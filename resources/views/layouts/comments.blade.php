@@ -51,7 +51,7 @@
                     <a href="/comments">我的評價</a>
                 </li>
                 <li>
-                    <a href="#">聯絡我們</a>
+                    <a href="/comments/contact">聯絡我們</a>
                 </li>
 
                 <li>

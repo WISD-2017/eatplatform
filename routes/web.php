@@ -41,6 +41,9 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/comments/all', 'CommentsController@all')->name('comments.all');
     //瀏覽所有評價
 
+    Route::get('/comments/contact','CommentsController@contact')->name('comments.contact');
+    //聯絡我們
+
     Route::get('/comments/create/{store_id}', 'CommentsController@create')->name('comments.create');
     Route::post('/comments/{store_id}', 'CommentsController@store')->name('comments.store');
     //新增評價
@@ -51,6 +54,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/comments/{comment_id}/edit', 'CommentsController@edit')->name('comments.edit');
     Route::patch('/comments/{comment_id}/update', 'CommentsController@update')->name('comments.update');
     //修改評價
+
 
 
 });

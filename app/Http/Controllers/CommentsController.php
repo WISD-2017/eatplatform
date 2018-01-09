@@ -66,4 +66,9 @@ class CommentsController extends Controller
         return redirect()->route('comments.index');
     }
 
+    public function contact()
+    {
+        return view('comments.contact');
+    }
+
 }
