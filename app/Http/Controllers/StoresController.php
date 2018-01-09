@@ -29,7 +29,7 @@ class StoresController extends Controller
      */
     public function create()
     {
-        //
+        return view('stores.create');
     }
 
     /**
@@ -40,7 +40,8 @@ class StoresController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Store::create($request->all());
+        return redirect()->route('stores.index');
     }
 
     /**
@@ -65,7 +66,9 @@ class StoresController extends Controller
      */
     public function edit($id)
     {
-        //
+        $store = Store::find($id);
+        $data = ['store' => $store];
+        return view('stores.edit', $data);
     }
 
     /**
@@ -77,7 +80,9 @@ class StoresController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $store = Store::find($id);
+        $store->update($request->all());
+        return redirect()->route('stores.index');
     }
 
     /**

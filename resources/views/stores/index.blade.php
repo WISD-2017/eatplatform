@@ -24,12 +24,13 @@
                                         {{ $stores->introduction }}
                                     </div>
                                 </div>
+                                <a href="{{route('stores.create')}}">123</a>
                                 <div class="row" style="margin-top:10px;">
                                     <div class="col-md-8">
                                         @if(Auth::check())
                                             <form method="POST" action="">
                                                 <span style="padding-left: 10px;">
-                                                    <a class="btn btn-xs btn-primary" href="">
+                                                    <a class="btn btn-xs btn-primary" href="{{route('stores.edit',$stores->id)}}">
                                                         <i class="glyphicon glyphicon-pencil"></i>
                                                         <span style="padding-left: 5px;">編輯文章</span>
                                                     </a>

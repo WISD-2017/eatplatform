@@ -19,14 +19,21 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::group(['prefix' => 'stores'], function() {
+Route::group(['prefix' => 'stores'], function () {
     /*瀏覽所有店家*/
     Route::get('/', 'StoresController@index')->name('stores.index');
+    /*新增店家介紹*/
+    Route::get('create', 'StoresController@create')->name('stores.create');
+    Route::post('/', 'StoresController@store')->name('stores.store');
     /*瀏覽店家介紹*/
     Route::get('{store_id}', 'StoresController@show')->name('stores.show');
+    /*修改店家介紹*/
+    Route::get('{store_id}/edit', 'StoresController@edit')->name('stores.edit');
+    Route::patch('{store_id}', 'StoresController@update')->name('stores.update');
+
 });
 
-Route::group(['middleware'=>'auth'],function(){
+Route::group(['middleware' => 'auth'], function () {
 
     Route::get('/comments', 'CommentsController@index')->name('comments.index');
     //瀏覽自己評價
@@ -53,15 +60,15 @@ Route::group(['middleware'=>'auth'],function(){
 
 
 });
-Route::group(['prefix' => 'admins'], function() {
-    
-	Route::get('/', function () {
-    return view('admin.index');
-});
+Route::group(['prefix' => 'admins'], function () {
 
-	//瀏覽檢舉店家
+    Route::get('/', function () {
+        return view('admin.index');
+    });
+
+    //瀏覽檢舉店家
     Route::get('/store', 'AdminStoreController@index')->name('admin.stores');
     //瀏覽檢舉評價
-      Route::get('/comment', 'AdminCommentController@index')->name('admin.comments');
+    Route::get('/comment', 'AdminCommentController@index')->name('admin.comments');
 
-	  });
+});
