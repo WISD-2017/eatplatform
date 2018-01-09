@@ -66,7 +66,9 @@ class StoresController extends Controller
      */
     public function edit($id)
     {
-        //
+        $store = Store::find($id);
+        $data = ['store' => $store];
+        return view('stores.edit', $data);
     }
 
     /**
@@ -78,7 +80,9 @@ class StoresController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $store = Store::find($id);
+        $store->update($request->all());
+        return redirect()->route('stores.index');
     }
 
     /**
