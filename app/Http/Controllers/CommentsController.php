@@ -12,7 +12,7 @@ class CommentsController extends Controller
     public function index()
     {
         $comments=Comment::join('stores','comments.store_id','=','stores.id')
-            ->select('comments.id','comments.content','comments.score','stores.store')
+            ->select('comments.id','comments.content','comments.score','stores.store','comments.created_at','comments.updated_at')
             ->where('member_id', Auth::user()->id )
             ->get();
 
@@ -22,6 +22,7 @@ class CommentsController extends Controller
     public function all()
     {
         $comments=Comment::join('stores','comments.store_id','=','stores.id')
+            ->select('comments.id','comments.content','comments.score','stores.store','comments.created_at','comments.updated_at')
             ->get();
         return view('comments.all',['comments'=>$comments]);
     }

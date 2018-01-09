@@ -23,10 +23,11 @@
                 </a>
             </div>
             <div class="col-md-5">
-                <h3>{{ $comments->store }}</h3>
+                <h3 style="font-weight:bold;">{{ $comments->store }}</h3>
                 <h4>給{{ $comments->score }}分</h4>
-                <p>{{ $comments->content }}</p>
+                <p style="line-height:90px;" border="1">{{ $comments->content }}</p>
                 <a class="btn btn-danger" href="#">檢舉<span class="glyphicon"></span></a>
+                <p>於{{ $comments->created_at }}評價 | 於{{ $comments->updated_at }}編輯過</p>
             </div>
         </div>
         <!-- /.row -->
@@ -34,35 +35,7 @@
 @endforeach
 
 
-<!-- Pagination -->
-    <div class="row text-center">
-        <div class="col-lg-12">
-            <ul class="pagination">
-                <li>
-                    <a href="#">&laquo;</a>
-                </li>
-                <li class="active">
-                    <a href="#">1</a>
-                </li>
-                <li>
-                    <a href="#">2</a>
-                </li>
-                <li>
-                    <a href="#">3</a>
-                </li>
-                <li>
-                    <a href="#">4</a>
-                </li>
-                <li>
-                    <a href="#">5</a>
-                </li>
-                <li>
-                    <a href="#">&raquo;</a>
-                </li>
-            </ul>
-        </div>
-    </div>
-    <!-- /.row -->
+
 
     <hr>
 
