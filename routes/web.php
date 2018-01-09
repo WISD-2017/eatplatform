@@ -34,8 +34,8 @@ Route::group(['middleware'=>'auth'],function(){
     Route::get('/comments/all', 'CommentsController@all')->name('comments.all');
     //瀏覽所有評價
 
-    Route::get('/comments/create', 'CommentsController@create')->name('comments.create');
-    Route::post('/comments', 'CommentsController@store')->name('comments.store');
+    Route::get('/comments/create/{store_id}', 'CommentsController@create')->name('comments.create');
+    Route::post('/comments/{store_id}', 'CommentsController@store')->name('comments.store');
     //新增評價
 
     Route::get('/comments/{comment_id}', 'CommentsController@destroy')->name('comments.destroy');
