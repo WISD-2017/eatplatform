@@ -13,7 +13,7 @@
         </div>
     </div>
     <!-- /.row -->
-    
+
 
     @foreach ($comments as $comments)
     <form action="/comments/report/{{ $comments->id }}" method="POST" role="form">
@@ -29,7 +29,7 @@
             </div>
             <div class="col-md-5">
                 <h3 style="font-weight:bold;">{{ $comments->store }}</h3>
-                <h4>給{{ $comments->score }}分</h4>
+                <h4>"{{ $comments->name }}"給{{ $comments->score }}分</h4>
                 <p style="line-height:90px;" border="1">{{ $comments->content }}</p>
                 <button type="submit" class="btn btn-danger" >檢舉</button>
 

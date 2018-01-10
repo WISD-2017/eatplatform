@@ -22,7 +22,8 @@ class CommentsController extends Controller
     public function all()
     {
         $comments=Comment::join('stores','comments.store_id','=','stores.id')
-            ->select('comments.id','comments.content','comments.score','stores.store','comments.created_at','comments.updated_at')
+            ->join('users','comments.member_id','=','users.id')
+            ->select('comments.id','comments.content','comments.score','stores.store','comments.created_at','comments.updated_at','users.name')
             ->get();
         return view('comments.all',['comments'=>$comments]);
     }
