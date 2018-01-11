@@ -9,11 +9,24 @@
                         <div class="panel-body">
                             <div class="container-fluid" style="padding:0;">
                                 <div class="row">
-                                    <div class="col-md-12">
+                                    <div class="col-md-10">
                                         <h4 style="margin-top:0;">{{ $stores->store }}</h4>
                                         地址：{{ $stores->address }}
                                         <br/>
                                         電話：{{ $stores->telephone }}
+                                    </div>
+                                    <div class="col-md-2">
+                                        @if(Auth::user()->userable_type=='App\Member')
+                                            <form method="POST" action="" class="col-xs-4">
+                                             <span style="padding-left: 10px;">
+                                                    <a class="btn btn-xs btn-primary"
+                                                       href="{{route('comments.create',$stores->id)}}">
+                                                        <i class="glyphicon glyphicon-pencil"></i>
+                                                        <span style="padding-left: 5px;">新增評論</span>
+                                                    </a>
+                                             </span>
+                                            </form>
+                                        @endif
                                     </div>
                                 </div>
 
