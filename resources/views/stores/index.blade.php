@@ -24,10 +24,9 @@
                                         {{ $stores->introduction }}
                                     </div>
                                 </div>
-                                <a href="{{route('stores.create')}}">123</a>
                                 <div class="row" style="margin-top:10px;">
                                     <div class="col-md-8">
-                                        @if(Auth::check())
+                                        @if(Auth::user()->userable_id==$stores->firm_id && Auth::user()->userable_type=='App\Firm')
                                             <form method="POST" action="">
                                                 <span style="padding-left: 10px;">
                                                     <a class="btn btn-xs btn-primary" href="{{route('stores.edit',$stores->id)}}">
