@@ -43,10 +43,21 @@
                     <!-- Right Side Of Navbar -->
                     <ul class="nav navbar-nav navbar-right">
                         <!-- Authentication Links -->
+                        <li><a href="{{ route('stores.index') }}">美食專區</a></li>
+
+
                         @if (Auth::guest())
                             <li><a href="{{ route('login') }}">Login</a></li>
                             <li><a href="{{ route('register') }}">Register</a></li>
                         @else
+                            @if(Auth::user()->userable_type=='App\Member')
+                                <li><a href="{{ route('comments.index') }}">我的專區</a></li>
+                            @elseif(Auth::user()->userable_type=='App\Firm')
+                                <li><a href="{{ route('stores.index') }}">我的專區</a></li>
+                            @else
+                                <li><a href="{{ route('admin.index') }}">管理者進入</a></li>
+                            @endif
+
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                                     {{ Auth::user()->name }} <span class="caret"></span>
