@@ -95,4 +95,16 @@ class StoresController extends Controller
     {
         //
     }
+    /**
+    * Remove the specified resource from storage.
+    *
+    * @param  int  $id
+    * @return \Illuminate\Http\Response
+    */
+    public function report($id)
+    {
+        $stores=Store::find($id);
+        $stores->update(['is_report'=>1]);
+        return redirect()->route('stores.show',$id);
+    }
 }

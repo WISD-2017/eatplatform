@@ -27,6 +27,29 @@
                                                         </a>
                                                  </span>
                                                 </form>
+                                                <form action="{{route('stores.report',$stores->id)}}" method="POST" role="form">
+                                                {{csrf_field()}}
+                                                {{method_field('PATCH')}}
+                                                <!-- Project One -->
+                                                    <div class="row">
+                                                        <div class="col-md-5">
+                                                            <button type="submit" class="btn btn-xs btn-danger" >檢舉此店家</button>
+                                                        </div>
+                                                    </div>
+                                                    <!-- /.row -->
+                                                </form>
+                                            @elseif(Auth::user()->userable_id!=$stores->id)
+                                                <form action="{{route('stores.report',$stores->id)}}" method="POST" role="form">
+                                                {{csrf_field()}}
+                                                {{method_field('PATCH')}}
+                                                <!-- Project One -->
+                                                    <div class="row">
+                                                        <div class="col-md-5">
+                                                            <button type="submit" class="btn btn-xs btn-danger" >檢舉此店家</button>
+                                                        </div>
+                                                    </div>
+                                                    <!-- /.row -->
+                                                </form>
                                             @endif
                                         @endif
                                     </div>
