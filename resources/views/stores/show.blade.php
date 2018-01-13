@@ -12,21 +12,21 @@
                     <div class="panel-body">
                         <div class="container-fluid" style="padding:0;">
                             <div class="row">
-                                <div class="col-md-12">
                                     <!-- Title -->
                                     <h3 style="margin-top:0;" class="col-xs-8">{{ $store->store }}</h3>
                                     @if(Auth::check())
-                                        <form method="POST" action="" class="col-xs-4">
-                                             <span style="padding-left: 10px;">
-                                                    <a class="btn btn-xs btn-primary"
-                                                       href="{{route('comments.create',$store->id)}}">
-                                                        <i class="glyphicon glyphicon-pencil"></i>
-                                                        <span style="padding-left: 5px;">新增評論</span>
-                                                    </a>
-                                             </span>
-                                        </form>
+                                        @if(Auth::user()->userable_type=='App\Member' || Auth::user()->userable_id!=$store->firm_id)
+                                            <form method="POST" action="" class="col-xs-4">
+                                                 <span style="padding-left: 10px;">
+                                                        <a class="btn btn-xs btn-primary"
+                                                           href="{{route('comments.create',$store->id)}}">
+                                                            <i class="glyphicon glyphicon-pencil"></i>
+                                                            <span style="padding-left: 5px;">新增評論</span>
+                                                        </a>
+                                                 </span>
+                                            </form>
+                                        @endif
                                     @endif
-                                </div>
                             </div>
                             <!-- Author -->
                             {{--<p class="lead">
