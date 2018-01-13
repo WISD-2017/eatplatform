@@ -16,16 +16,18 @@
                                         電話：{{ $stores->telephone }}
                                     </div>
                                     <div class="col-md-2">
-                                        @if(Auth::user()->userable_type=='App\Member')
-                                            <form method="POST" action="" class="col-xs-4">
-                                             <span style="padding-left: 10px;">
-                                                    <a class="btn btn-xs btn-primary"
-                                                       href="{{route('comments.create',$stores->id)}}">
-                                                        <i class="glyphicon glyphicon-pencil"></i>
-                                                        <span style="padding-left: 5px;">新增評論</span>
-                                                    </a>
-                                             </span>
-                                            </form>
+                                        @if(Auth::check())
+                                            @if(Auth::user()->userable_type=='App\Member')
+                                                <form method="POST" action="" class="col-xs-4">
+                                                 <span style="padding-left: 10px;">
+                                                        <a class="btn btn-xs btn-primary"
+                                                           href="{{route('comments.create',$stores->id)}}">
+                                                            <i class="glyphicon glyphicon-pencil"></i>
+                                                            <span style="padding-left: 5px;">新增評論</span>
+                                                        </a>
+                                                 </span>
+                                                </form>
+                                            @endif
                                         @endif
                                     </div>
                                 </div>
@@ -39,21 +41,23 @@
                                 </div>
                                 <div class="row" style="margin-top:10px;">
                                     <div class="col-md-8">
-                                        @if(Auth::user()->userable_id==$stores->firm_id && Auth::user()->userable_type=='App\Firm')
-                                            <form method="POST" action="">
-                                                <span style="padding-left: 10px;">
-                                                    <a class="btn btn-xs btn-primary" href="{{route('stores.edit',$stores->id)}}">
-                                                        <i class="glyphicon glyphicon-pencil"></i>
-                                                        <span style="padding-left: 5px;">編輯文章</span>
-                                                    </a>
-                                                    {{ csrf_field() }}
-                                                    <input type="hidden" name="_method" value="DELETE" />
-                                                    <button type="submit" class="btn btn-xs btn-danger">
-                                                        <i class="glyphicon glyphicon-trash"></i>
-                                                        <span style="padding-left: 5px;">刪除文章</span>
-                                                    </button>
-                                                </span>
-                                            </form>
+                                        @if(Auth::check())
+                                            @if(Auth::user()->userable_id==$stores->firm_id && Auth::user()->userable_type=='App\Firm')
+                                                <form method="POST" action="">
+                                                    <span style="padding-left: 10px;">
+                                                        <a class="btn btn-xs btn-primary" href="{{route('stores.edit',$stores->id)}}">
+                                                            <i class="glyphicon glyphicon-pencil"></i>
+                                                            <span style="padding-left: 5px;">編輯文章</span>
+                                                        </a>
+                                                        {{ csrf_field() }}
+                                                        <input type="hidden" name="_method" value="DELETE" />
+                                                        <button type="submit" class="btn btn-xs btn-danger">
+                                                            <i class="glyphicon glyphicon-trash"></i>
+                                                            <span style="padding-left: 5px;">刪除文章</span>
+                                                        </button>
+                                                    </span>
+                                                </form>
+                                            @endif
                                         @endif
                                     </div>
                                     <div class="col-md-4">
