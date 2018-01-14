@@ -11,7 +11,7 @@ class Comment extends Model
 {
     protected $table='comments';
 
-    protected $fillable=['content', 'score', 'is_report', ];
+    protected $fillable=['content', 'score', 'is_report', 'member_id', 'store_id' ];
 
     public function member(){
         return $this->belongsTo(Member::class);

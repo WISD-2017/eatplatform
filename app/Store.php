@@ -11,7 +11,7 @@ class Store extends Model
     protected $table='stores';
 
     protected $fillable=['store', 'address','telephone', 'type', 'avg_score',
-        'introduction', 'is_report', ];
+        'introduction', 'is_report', 'firm_id'];
 
     public function firm(){
         return $this->belongsTo(Firm::class);
