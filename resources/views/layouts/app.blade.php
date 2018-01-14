@@ -56,7 +56,7 @@
                                 <li><a href="{{ route('stores.index') }}">我的專區</a></li>
                                 <li><a href="{{ route('stores.create') }}">新增店家介紹</a></li>
                             @else
-                                <li><a href="{{ route('admin.index') }}">管理者進入</a></li>
+                                <li><a href="{{ route('admin') }}">管理者進入</a></li>
                             @endif
 
                             <li class="dropdown">

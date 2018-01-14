@@ -68,7 +68,7 @@ Route::group(['prefix' => 'admins'], function () {
 
     Route::get('/', function () {
         return view('admin.index');
-    });
+    })->name('admin');
 
     //瀏覽檢舉店家
     Route::get('/store', 'AdminStoreController@index')->name('admin.stores');
