@@ -93,7 +93,9 @@ class StoresController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $store = Store::find($id);
+        $store->delete();
+        return redirect()->route('stores.index');
     }
     /**
     * Remove the specified resource from storage.

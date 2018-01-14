@@ -72,14 +72,14 @@
                                                             <i class="glyphicon glyphicon-pencil"></i>
                                                             <span style="padding-left: 5px;">編輯文章</span>
                                                         </a>
-                                                        {{ csrf_field() }}
-                                                        <input type="hidden" name="_method" value="DELETE" />
-                                                        <button type="submit" class="btn btn-xs btn-danger">
-                                                            <i class="glyphicon glyphicon-trash"></i>
-                                                            <span style="padding-left: 5px;">刪除文章</span>
-                                                        </button>
                                                     </span>
                                                 </form>
+                                                {{ csrf_field() }}
+
+                                                <a href="{{route('stores.destroy',$stores->id)}}" class="btn btn-xs btn-danger">
+                                                    <i class="glyphicon glyphicon-trash"></i>
+                                                    <span style="padding-left: 5px;">刪除文章</span>
+                                                </a>
                                             @endif
                                         @endif
                                     </div>

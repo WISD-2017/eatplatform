@@ -30,6 +30,8 @@ Route::group(['prefix' => 'stores'], function () {
     /*修改店家介紹*/
     Route::get('{store_id}/edit', 'StoresController@edit')->name('stores.edit');
     Route::patch('{store_id}', 'StoresController@update')->name('stores.update');
+    /*刪除店家介紹*/
+    Route::get('{store_id}/destroy', 'StoresController@destroy')->name('stores.destroy');
     /*檢舉店家介紹*/
     Route::patch('report/{store_id}','StoresController@report')->name('stores.report');
 
