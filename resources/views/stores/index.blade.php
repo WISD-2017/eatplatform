@@ -38,7 +38,7 @@
                                                     </div>
                                                     <!-- /.row -->
                                                 </form>
-                                            @elseif(Auth::user()->userable_id!=$stores->id)
+                                            @elseif(Auth::user()->userable_id!=$stores->firm_id)
                                                 <form action="{{route('stores.report',$stores->id)}}" method="POST" role="form">
                                                 {{csrf_field()}}
                                                 {{method_field('PATCH')}}

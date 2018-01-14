@@ -8,6 +8,7 @@ use App\Member;
 use App\User;
 use Illuminate\Http\Request;
 use App\Store;
+use Auth;
 
 class StoresController extends Controller
 {
@@ -40,7 +41,10 @@ class StoresController extends Controller
      */
     public function store(Request $request)
     {
-        Store::create($request->all());
+        $store=new Store($request->only('store','address','telephone','introduction','type'));
+        $store->firm_id=Auth::user()->userable_id;
+        $store->save();
+
         return redirect()->route('stores.index');
     }
 

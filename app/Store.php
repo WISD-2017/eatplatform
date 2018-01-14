@@ -10,7 +10,7 @@ class Store extends Model
 {
     protected $table='stores';
 
-    protected $fillable=['store', 'address', 'type', 'avg_score',
+    protected $fillable=['store', 'address','telephone', 'type', 'avg_score',
         'introduction', 'is_report', ];
 
     public function firm(){
