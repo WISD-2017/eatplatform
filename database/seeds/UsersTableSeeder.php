@@ -25,7 +25,7 @@ class UsersTableSeeder extends Seeder
         $user = new User();
         $user->name = 'admin';
         $user->email = 'admin@mail.com';
-        $user->password = 'admin123';
+        $user->password = bcrypt('admin123');
         Admin::create()->user()->save($user);
 
         //商家資料
@@ -34,7 +34,7 @@ class UsersTableSeeder extends Seeder
             $user = new User();
             $user->name = $faker->name;
             $user->email = $faker->email;
-            $user->password = 'firm123';
+            $user->password = bcrypt('firm123');
 
             Firm::create([
                 'firm' => $faker->company,
@@ -49,7 +49,7 @@ class UsersTableSeeder extends Seeder
             $user = new User();
             $user->name = $faker->name;
             $user->email = $faker->email;
-            $user->password = 'member123';
+            $user->password = bcrypt('member123');
 
             Member::create([
                 'gender' => rand(0, 1),
