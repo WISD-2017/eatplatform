@@ -50,6 +50,19 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 
 The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
 
+##安裝
+composer require doctrine/dbal
+artisan migration
+artisan db:seed
+
+##測試資料
+管理員帳號:admin@mail.com
+管理員密碼:admin123
+
+會員密碼:member123
+
+商家密碼:firm123
+
 ##評價視圖模板
 參考網站
 https://startbootstrap.com/template-overviews/1-col-portfolio/
